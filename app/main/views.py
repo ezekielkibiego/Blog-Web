@@ -12,9 +12,12 @@ def index():
     '''
     View root page function that returns the index page and its data.
     '''
+    quote = get_quote()
+    
     post_form = PostForm()
+
     all_posts = Post.query.order_by(Post.date_posted).all()
-    return render_template('index.html', posts=all_posts)
+    return render_template('index.html', posts=all_posts, quote = quote)
 
 
 @main.route('/user/<uname>')
@@ -59,4 +62,4 @@ def quotes():
     quote = get_quote()
     title = 'LetsBlog | Quotes'
     
-    return render_template('quotes.html', title = title,quote = quote)
+    return render_template('index.html', title = title,quote = quote)
