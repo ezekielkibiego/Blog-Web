@@ -11,8 +11,6 @@ def load_user(user_id):
 class User(UserMixin, db.Model):
     __tablename__ = 'users'
 
-    post = db.relationship('Post', backref='user', lazy="dynamic")
-
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(255))
     email = db.Column(db.String(255), unique=True, index=True)
@@ -33,4 +31,20 @@ class User(UserMixin, db.Model):
 
     def __repr__(self):
         return f'User {self.username}'
+
+class Post(db.Model):
+    _tablename_ = 'posts'
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(255))
+    category = db.Column(db.String)
+    content = db.Column(db.Text)
+    date_posted = db.Column(db.DateTime, default=datetime.utcnow)
+    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
+    
+    def save_post(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def _repr_(self):
+        return f'Post {self.title}'
 

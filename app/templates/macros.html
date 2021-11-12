@@ -1,0 +1,7 @@
+{% macro displayUsers(users_list) %}
+    {% for user in users_list %}
+    <div class="comments">
+        {{ user.users }}
+    </div>
+    {% endfor %}
+{% endmacro %}
