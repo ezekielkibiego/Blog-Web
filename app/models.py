@@ -48,3 +48,11 @@ class Post(db.Model):
     def _repr_(self):
         return f'Post {self.title}'
 
+class Quote:
+    """
+    class for quotes consumed from API
+    """
+    def __init__(self, author, quote):
+        self.author = author
+        self.quote = quote
+

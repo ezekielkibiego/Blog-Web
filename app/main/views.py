@@ -1,9 +1,10 @@
 from flask import render_template, request, redirect, url_for, abort, flash
 from . import main
-from ..models import User,Post
+from ..models import User,Post,Quote
 from flask_login import login_required, current_user
 from .. import db, photos
 from .forms import UpdateProfile, PostForm
+from ..requests import get_quote
 
 
 @main.route('/')
@@ -49,3 +50,13 @@ def update_pic(uname):
         user.profile_pic_path = path
         db.session.commit()
     return redirect(url_for('main.profile', uname=uname))
+
+@main.route('/quotes')
+def quotes():
+
+    '''
+    '''
+    quote = get_quote()
+    title = 'LetsBlog | Quotes'
+    
+    return render_template('quotes.html', title = title,quote = quote)
