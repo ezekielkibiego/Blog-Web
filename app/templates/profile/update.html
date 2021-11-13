@@ -13,69 +13,73 @@
     {{wtf.quick_form(form)}}
 </div>
 
-<div class="container-fluid" style="background-color: #d43f3a">
-    <footer class="text-center text-white">
-      <div class="container-fluid">
-        <section class="mt-5">
-          <div class="row text-center d-flex justify-content-center pt-5">
-            <div class="col-md-2">
-              <h6 class="text-uppercase font-weight-bold">
-                <a href="/" class="text-white">Home</a>
-              </h6>
-            </div>
-            <div class="col-md-2">
-                <h6 class="text-uppercase font-weight-bold">
-                    <a href="/quotes" class="text-white">Quotes</a>
-                </h6>
-              </div>
-            <div class="col-md-2">
-              <h6 class="text-uppercase font-weight-bold">
-                <a href="{{url_for('main.profile',uname=current_user.username)}}" class="text-white">{{current_user.username}}</a>
-              </h6>
-            </div>
-           
-            <div class="col-md-2">
-              <h6 class="text-uppercase font-weight-bold">
-                <a href="{{url_for('auth.logout')}}" class="text-white">Logout</a>
-              </h6>
-            </div>
-            
-            <div class="col-md-2">
-              <h6 class="text-uppercase font-weight-bold">
-                <a href="{{url_for('auth.login')}}" class="text-white">Login</a>
-              </h6>
-            </div>
-            
-          </div>
-          
-        </section>
-        
-  
-        <hr class="my-3" />
-  
-        
-        <section class="mb-5">
-          <div class="row d-flex justify-content-center">
-            <div class="col-lg-8">
-              <p>
-                
-              </p>
-            </div>
-          </div>
-        </section>
-        
-      </div><br>
-     
-      <div
-           class=""
-           style="background-color: #d43f3a"
-           >
-        © 2021 Copyright:
-        <a class="text-white" href="/">blogweb.com</a>
-      </div> <br>
-      
-    </footer>
-    
-  </div> <br>
+<section class="footer">
+    <div class="container-fluid" style="background-color: #56445D">
+        <footer class="text-center text-white">
+            <div class="container-fluid">
+                <section class="mt-5">
+                    <div class="row text-center d-flex justify-content-center pt-5">
+                        <div class="col-md-2">
+                            <h6 class="text-uppercase font-weight-bold">
+                                <a href="/" class="text-white">Home</a>
+                            </h6>
+                        </div>
+                        <div class="col-md-2">
+                            <h6 class="text-uppercase font-weight-bold">
+                                <a href="/quotes" class="text-white">Quotes</a>
+                            </h6>
+                        </div>
+                        <div class="col-md-2">
+                            <h6 class="text-uppercase font-weight-bold">
+                              <a href="/blogs" class="text-white">Blogs</a>
+                            </h6>
+                        </div>
+                        <div class="col-md-2">
+                            <h6 class="text-uppercase font-weight-bold">
+                                <a href="{{url_for('main.profile',uname=current_user.username)}}"
+                                    class="text-white">{{current_user.username}}</a>
+                            </h6>
+                        </div>
 
+                        <div class="col-md-2">
+                            <h6 class="text-uppercase font-weight-bold">
+                                <a href="{{url_for('auth.logout')}}" class="text-white">Logout</a>
+                            </h6>
+                        </div>
+
+                        <div class="col-md-2">
+                            <h6 class="text-uppercase font-weight-bold">
+                                <a href="{{url_for('auth.login')}}" class="text-white">Login</a>
+                            </h6>
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <hr class="my-3" />
+
+
+                <section class="mb-5">
+                    <div class="row d-flex justify-content-center">
+                        <div class="col-lg-8">
+                            <p>
+
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+            </div><br>
+
+            <div class="" style="background-color: #56445D">
+                © 2021 Copyright:
+                <a class="text-white" href="/">blogweb.com</a>
+            </div> <br>
+
+        </footer>
+
+    </div> <br>
+</section>
 {% endblock %}

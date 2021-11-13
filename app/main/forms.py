@@ -19,3 +19,10 @@ class PostForm(FlaskForm):
     
     post_content = StringField('What is in your mind?')
     submit = SubmitField('Submit')
+
+class BlogForm(FlaskForm):
+    blog_title = StringField('Blog title', validators=[Required()])
+    category = SelectField('Blog category',choices=[('Select a category','Select a category'),('Fashion', 'Fashion'),('Sports','Sports'),('Travel','Travel'),('Tech','Tech')], validators=[Required()])
+    content = TextAreaField('Body', validators=[Required()])
+    created_by= StringField('Blog author',validators=[Required()])
+    submit = SubmitField('Submit')
