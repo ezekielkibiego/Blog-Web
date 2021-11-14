@@ -6,14 +6,40 @@
 <link rel="stylesheet" href="{{url_for('static', filename= 'css/index.css')}}">
 {%endblock %}
 {% block content %}
- <body>
-  <div  class="container">
 
-    {{wtf.quick_form(blog_form)}}
+<body>
+    <div class="container-fluid">
+
+        {{wtf.quick_form(blog_form)}}
+
     
-  </div>
-  
- </body> 
+
+    </div>
+    <div class="container">
+        {% for blog in blogs %}
+
+        <div class="col-md-3 ">
+            <div class="text-centre">
+                <div class="card text-white mb-3" style="max-width: 30rem; margin:1vw; padding:1vw;">
+                    <h4 class="card-header">{{blog.title}}</h4>
+                    <div class="card-body">
+
+                        <p class="card-title">Category: {{blog.category}}</p>
+
+                        <p class="card-text">Content: {{blog.content}}</p>
+                        <p class="card-text">Author: {{blog.created_by| capitalize}}</p>
+                        <p class="card-text">Date Posted: {{blog.date_posted}}</p>
+            
+                        <a href="{{ url_for('main.delete_blog',id=blog.id)}}" class="text-danger" title="Delete Blog"><button>Delete Blog</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        {% endfor %}
+    </div>
+
+</body>
 
 <section class="footer">
     <div class="container-fluid" style="background-color: #56445D">
@@ -33,9 +59,9 @@
                         </div>
                         <div class="col-md-2">
                             <h6 class="text-uppercase font-weight-bold">
-                              <a href="/blogs" class="text-white">Blogs</a>
+                                <a href="/blog" class="text-white">Blogs</a>
                             </h6>
-                          </div>
+                        </div>
                         <div class="col-md-2">
                             <h6 class="text-uppercase font-weight-bold">
                                 <a href="{{url_for('main.profile',uname=current_user.username)}}"

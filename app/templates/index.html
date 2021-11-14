@@ -49,10 +49,11 @@
 
           <p class="card-title">Category: {{blog.category}}</p>
 
-          <p class="card-text">Description: {{blog.content}}</p>
+          <p class="card-text">Content: {{blog.content}}</p>
           <p class="card-text">Author: {{blog.created_by| capitalize}}</p>
+          <p class="card-text">Date Posted: {{blog.date_posted}}</p>
           <a href="/blog" class="tag"><button>Add Blog</button></a>
-          <a href="{{ url_for('main.delete_blog',id=blog.id)}}" class="text-danger" title="Delete Post"><button>Delete Blog</button>
+          
         </div>
       </div>
     </div>
