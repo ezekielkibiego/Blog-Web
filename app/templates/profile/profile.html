@@ -5,31 +5,32 @@
 {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
 {% endblock %}
-{% block content %}
+{% block content %} <br><br>
 <div class="container">
 <div class="row">
   <div class="col-md-4">
     <h3> {{user.username| capitalize}} </h3>
-
+    <p>Email : {{user.email}}</p>
     {% if user.bio %}
-      <p> {{user.bio}}</p>
+    
+    <p>Bio : {{user.bio}}</p>
     {%else%}
       <p> {{user.username| capitalize}} has no bio </p>
     {% endif %}
     {%if user == current_user %}
-    <a href="{{url_for('main.update_profile',uname=user.username)}}">Edit Profile</a>
+    <a href="{{url_for('main.update_profile',uname=user.username)}}"><button>Edit Profile</button></a>
     {%endif%}
   </div>
 
-  <div class="col-md-4">
+  <div class="col-md-4 photos">
     {% if user.profile_pic_path %}
     <img src="{{url_for('static',filename=user.profile_pic_path)}}" alt="" class="img-thumbnail">
     {%else%}
     <p>No profile picture</p>
     {% endif %}
     {% if user == current_user %}
-    <form  action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype = "multipart/form-data">
-      <input type="file"  name="photo" class="form-control" required>
+    <form  action="{{url_for('main.update_pic',uname=user.username)}}" method="post" enctype = "multipart/form-data"><br>
+      <input type="file"  name="photo" class="form-control" required><br>
       <input type="submit">
     </form>
     {% endif %}
@@ -37,12 +38,12 @@
   </div>
 
  
-</div>
+</div><br><br>
 
 </div>
 
 <section class="footer">
-  <div class="container-fluid" style="background-color: #56445D">
+  <div class="container-fluid" style="background-color: #ffd97d">
       <footer class="text-center text-white">
           <div class="container-fluid">
               <section class="mt-5">
@@ -84,11 +85,6 @@
                   </div>
 
               </section>
-
-
-              <hr class="my-3" />
-
-
               <section class="mb-5">
                   <div class="row d-flex justify-content-center">
                       <div class="col-lg-8">
@@ -99,15 +95,15 @@
                   </div>
               </section>
 
-          </div><br>
+          </div>
 
-          <div class="" style="background-color: #56445D">
+          <div class="" style="background-color: #ffd97d">
               © 2021 Copyright:
               <a class="text-white" href="/">blogweb.com</a>
           </div> <br>
 
       </footer>
 
-  </div> <br>
+  </div>
 </section>
 {% endblock %}

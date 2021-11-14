@@ -4,7 +4,10 @@
 {% block styles%}
 {{ super() }}
 <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 {% endblock %}
+
 
 {% block content %}
 
@@ -23,10 +26,10 @@
 
   </div><br>
 
-  <div class="col-sm-12">
+  <div class="col-sm-12 ">
     <div class="panel panel-default">
       <div class="card">
-        <div class="panel-body">
+        <div class="panel-body quote">
           <blockquote class="blockquote mb-0 card-body">
             <p>{{quote.quote}}</p>
             <footer class="blockquote-footer" style:#d43f3a>
@@ -52,8 +55,8 @@
           <p class="card-text">Content: {{blog.content}}</p>
           <p class="card-text">Author: {{blog.created_by| capitalize}}</p>
           <p class="card-text">Date Posted: {{blog.date_posted.strftime('%Y-%m-%d')}}</p>
-          <a href="/blog" class="tag"><button>Add Blog</button></a>
-          <a href="{{ url_for('main.blog_details', id = blog.id)}}"><button class="btn-success">Add a comment</button></a>
+          <a href="/blog" class="tag"><button class="btn-success">Add Blog</button></a>
+          <a href="{{ url_for('main.blog_details', id = blog.id)}}"><button class="btn-success">Add Comment</button></a>
 
         </div>
       </div>
@@ -65,10 +68,10 @@
 
 
 <section class="footer">
-  <div class="container-full" style="background-color: #56445D">
+  <div class="container-full" style="background-color: #ffd97d">
     <footer class="text-center text-white">
       <div class="container-fluid">
-        <section class="">
+        <section class="bg">
           <div class="row text-center">
             <div class="col-md-2">
               <h6 class="text-uppercase font-weight-bold">
@@ -107,11 +110,6 @@
           </div>
 
         </section>
-
-
-        <hr class="my-3" />
-
-
         <section class="mb-5">
           <div class="row d-flex justify-content-center">
             <div class="col-lg-8">
@@ -122,16 +120,16 @@
           </div>
         </section>
 
-      </div><br>
+      </div>
 
-      <div class="" style="background-color: #56445D">
+      <div class="" style="background-color: #ffd97d">
         © 2021 Copyright:
         <a class="text-white" href="/">blogweb.com</a>
       </div> <br>
 
     </footer>
 
-  </div> <br>
+  </div>
 </section>
 
 {% endblock %}
