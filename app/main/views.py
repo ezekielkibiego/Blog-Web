@@ -83,3 +83,15 @@ def new_blog():
         all_blogs = Blog.query.order_by(Blog.date_posted).all()
 
     return render_template('blogs.html', blogs=all_blogs,blog_form = blog_form)
+
+@main.route('/blog/<int:id>/delete', methods=['GET', 'POST'])
+@login_required
+def delete_blog(id):
+    """
+        View delete post function that returns the delete post page and its data
+    """
+    blog = Blog.query.get_or_404(id)
+    db.session.delete(blog)
+    db.session.commit()
+    flash('You have successfully deleted the post', 'success')
+    return redirect(url_for('main.index'))
