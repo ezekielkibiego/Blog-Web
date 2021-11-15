@@ -31,6 +31,9 @@
 
     <p>{{ comment.comment }}</p>
 
+    <a href="{{ url_for('main.delete_comment',id=comment.id)}}" style="margin-left: 10px;;" class="text-danger" title="Delete Post">
+      <small><i class="fa fa-trash"></i></small>
+
     {% endfor %}
 
     <section class="footer">
