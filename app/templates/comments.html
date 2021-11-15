@@ -30,6 +30,71 @@
     <p>{{ comment.comment }}</p>
 
     {% endfor %}
+
+    <section class="footer">
+        <div class="container-fluid" style="background-color: #ffd97d">
+            <footer class="text-center text-white">
+                <div class="container-fluid">
+                    <section class="mt-5">
+                        <div class="row text-center d-flex justify-content-center pt-5">
+                            <div class="col-md-2">
+                                <h6 class="text-uppercase font-weight-bold">
+                                    <a href="/" class="text-white">Home</a>
+                                </h6>
+                            </div>
+                            <div class="col-md-2">
+                                <h6 class="text-uppercase font-weight-bold">
+                                    <a href="/quotes" class="text-white">Quotes</a>
+                                </h6>
+                            </div>
+                            <div class="col-md-2">
+                                <h6 class="text-uppercase font-weight-bold">
+                                    <a href="/blog" class="text-white">Blogs</a>
+                                </h6>
+                            </div>
+                            <div class="col-md-2">
+                                <h6 class="text-uppercase font-weight-bold">
+                                    <a href="{{url_for('main.profile',uname=current_user.username)}}"
+                                        class="text-white">{{current_user.username}}</a>
+                                </h6>
+                            </div>
+    
+                            <div class="col-md-2">
+                                <h6 class="text-uppercase font-weight-bold">
+                                    <a href="{{url_for('auth.logout')}}" class="text-white">Logout</a>
+                                </h6>
+                            </div>
+    
+                            <div class="col-md-2">
+                                <h6 class="text-uppercase font-weight-bold">
+                                    <a href="{{url_for('auth.login')}}" class="text-white">Login</a>
+                                </h6>
+                            </div>
+    
+                        </div>
+    
+                    </section>
+                    <section class="mb-5">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-lg-8">
+                                <p>
+    
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+    
+                </div>
+    
+                <div class="" style="background-color: #ffd97d">
+                    © 2021 Copyright:
+                    <a class="text-white" href="/">blogweb.com</a>
+                </div> <br>
+    
+            </footer>
+    
+        </div>
+    </section>
 </body>
 
 
