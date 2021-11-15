@@ -57,7 +57,7 @@ To get the code..
   ```
 2. cd to the folder and install requirements
   ```bash
-  cd Pitches
+  cd Blog-Web
   pip install -r requirements.txt
   ```
 3. Exporting Configurations
