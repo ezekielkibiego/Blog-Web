@@ -16,7 +16,7 @@ def index():
     quote = get_quote()
     post_form = PostForm()
     blog_form = BlogForm()
-    all_blogs = Blog.query.order_by(Blog.date_posted).all()
+    all_blogs = Blog.query.order_by(Blog.date_posted.desc()).all()
     all_posts = Post.query.order_by(Post.date_posted).all()
     return render_template('index.html',quote =quote,posts=all_posts, blogs = all_blogs)
 
@@ -24,7 +24,7 @@ def index():
 def profile(uname):
     user = User.query.filter_by(username=uname).first()
     blog_form = BlogForm()
-    all_blogs = Blog.query.order_by(Blog.date_posted).all()
+    all_blogs = Blog.get_current_blog(current_user.id).order_by(Blog.date_posted.desc()).all()
     if user is None:
         abort(404)
 
@@ -75,7 +75,8 @@ def new_blog():
         category = blog_form.category.data
         content = blog_form.content.data
         created_by = blog_form.created_by.data
-        new_blog = Blog(title=title, category=category, content=content, created_by= created_by)
+        user_id = current_user.id
+        new_blog = Blog(title=title, category=category, content=content, user_id=user_id, created_by= created_by)
         new_blog.save_blog()
         db.session.add(new_blog)
         db.session.commit()

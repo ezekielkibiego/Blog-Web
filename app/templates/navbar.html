@@ -21,9 +21,9 @@
         <li class="user"><a href="{{url_for('main.profile',uname=current_user.username)}}" style="color: white;">{{current_user.username}}</a>
         </li>
 
-        <li><a href="{{url_for('auth.logout')}}" style="color: white;">Sign out</a></li>
+        <li><a href="{{url_for('auth.logout')}}" style="color: white;">Log out</a></li>
         {% else %}
-        <li><a href="{{url_for('auth.login')}}" style="color: white;">Sign in</a></li>
+        <li><a href="{{url_for('auth.login')}}" style="color: white;">Log in</a></li>
         {%endif%}
       </ul>
     </div>

@@ -44,17 +44,18 @@
     </div>
   </div>
   {% for blog in blogs %}
-  <div class="col-md-3 ">
+  <div class="col-md-6 ">
     <div class="text-centre">
-      <div class="card text-white mb-3" style="max-width: 30rem; margin:1vw; padding:1vw;">
-        <h4 class="card-header">{{blog.title}}</h4>
+      <div class="card text-white mb-3" >
+        <h3 class="card-title">{{blog.category}}</h3>
         <div class="card-body">
 
-          <p class="card-title">Category: {{blog.category}}</p>
+          
+          <h4 class="card-header">{{blog.title}}</h4>
 
-          <p class="card-text">Content: {{blog.content}}</p>
-          <p class="card-text">Author: {{blog.created_by| capitalize}}</p>
-          <p class="card-text">Date Posted: {{blog.date_posted.strftime('%Y-%m-%d')}}</p>
+          <p class="card-text">{{blog.content}}</p>
+          <p class="card-text">{{blog.created_by| capitalize}}</p>
+          <p class="card-text">{{blog.date_posted.strftime('%Y-%m-%d')}}</p>
           <a href="/blog" class="tag"><button class="btn-success">Add Blog</button></a>
           <a href="{{ url_for('main.blog_details', id = blog.id)}}"><button class="btn-success"><i class="fa fa-comment" aria-hidden="true"></i></button></a>
 
@@ -65,7 +66,7 @@
   {% endfor %}
 
 </div>
-
+<hr>
 
 <section class="footer">
   <div class="container-fluid" style="background-color: #2a9d8f">

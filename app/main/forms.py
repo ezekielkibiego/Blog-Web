@@ -21,10 +21,10 @@ class PostForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class BlogForm(FlaskForm):
-    blog_title = StringField('Blog title', validators=[Required()])
-    category = SelectField('Blog category',choices=[('Select a category','Select a category'),('Fashion', 'Fashion'),('Sports','Sports'),('Travel','Travel'),('Tech','Tech')], validators=[Required()])
+    blog_title = StringField('Title', validators=[Required()])
+    category = SelectField('Category',choices=[('Select a category','Select a category'),('Health', 'Health'),('Lifestyle', 'Lifestyle'),('Sports','Sports'),('Politics','Politics'),('Technology','Technology')], validators=[Required()])
     content = TextAreaField('Body', validators=[Required()])
-    created_by= StringField('Blog author',validators=[Required()])
+    created_by= StringField('Author',validators=[Required()])
     submit = SubmitField('Submit')
 
 class CommentForm(FlaskForm):
