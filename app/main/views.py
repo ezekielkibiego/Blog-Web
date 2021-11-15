@@ -132,7 +132,7 @@ def blog_details(id):
     return render_template('comments.html', blog=blogs, comment=comments, comment_form=form)
 
 
-
+# delete comment
 @main.route('/comment/<int:id>/delete', methods=['GET', 'POST'])
 @login_required
 def delete_comment(id):
