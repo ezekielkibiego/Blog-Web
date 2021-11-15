@@ -26,14 +26,14 @@
 
   </div><br>
 
-  <div class="col-sm-12 ">
+  <div class="col-sm-12 quotes">
     <div class="panel panel-default">
       <div class="card">
         <div class="panel-body quote">
-          <blockquote class="blockquote mb-0 card-body">
+          <blockquote class="blockquote mb-0 card-body"><br>
             <p>{{quote.quote}}</p>
-            <footer class="blockquote-footer" style:#2a9d8f>
-              <cite title="Source Title">{{quote.author| capitalize}}</cite>
+            <footer class="blockquote-footer">
+              <cite title="Source Title" style="color: white;">{{quote.author| capitalize}}</cite>
 
             </footer>
 
@@ -43,6 +43,36 @@
       </div>
     </div>
   </div>
+  <div class="container row">
+    <div class="card col-md-12">
+        <h5>Blog Web Live!</h5>
+        <p>Subscribe by joining our mailing newsletters to receive updates on new blogs alerts </p>
+        <div class="col-md-12">
+            
+            {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+            {% for category, message in messages %}
+            <div class="alert alert-{{ category }} d-flex" role="alert">
+                <div>
+                  {{ message }}
+                </div>
+            </div>
+            {% endfor %}
+            {% endif %}
+            {% endwith %}
+        </div>
+        <form action="{{ url_for('main.subscribe')}}" class="search">
+            <div class="input-group">
+                <input type="email" class="form-control" placeholder="Enter your Email" name="email" required><br>
+                <div class="input-group-append"><br>
+                    <button class="btn-success" type="submit" >
+                        <i class="fa fa-envelope"></i>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
   {% for blog in blogs %}
   <div class="col-md-6 ">
     <div class="text-centre">
@@ -63,9 +93,9 @@
     </div>
   </div>
   {% endfor %}
+  
+</div><br>
 
-</div>
-<hr>
 
 <section class="footer">
   <div class="container-fluid" style="background-color: #2a9d8f">

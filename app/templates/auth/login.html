@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-<hr><hr><hr>
+<br><br><br>
 <div class="container-fluid">
     <div class="row">
       <div class= "col-md-2"> </div>
@@ -23,13 +23,13 @@
       {% endfor %}
 
       {{wtf.quick_form(login_form)}}
-      <hr>
+      <br>
       <p> Don't have an Account? <a href="{{url_for('auth.register')}}" class="sign"><button class="btn-success">Sign Up</button></a></p>
      </div>
      <div class="col-md-2"> </div>
     </div>
 </div><br>
-<hr><hr><hr><br>
+<br><br><br><br>
 <section class="footer">
     <div class="container-fluid" style="background-color: #2a9d8f">
         <footer class="text-center text-white">

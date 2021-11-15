@@ -1,6 +1,6 @@
 from flask import render_template, request, redirect, url_for, abort, flash
 from . import main
-from ..models import User,Post,Quote,Blog,Comment
+from ..models import User,Post,Quote,Blog,Comment,Subscriber
 from flask_login import login_required, current_user
 from .. import db, photos
 from .forms import UpdateProfile, PostForm
@@ -132,6 +132,7 @@ def blog_details(id):
     return render_template('comments.html', blog=blogs, comment=comments, comment_form=form)
 
 
+
 # delete comment
 @main.route('/comment/<int:id>/delete', methods=['GET', 'POST'])
 @login_required
@@ -147,3 +148,15 @@ def delete_comment(id):
   
     flash('You have successfully deleted the comment', 'success')
     return redirect(url_for('main.profile', uname=current_user.username))
+
+@main.route('/subscribe', methods=['GET', 'POST'])
+def subscribe():
+    """
+         subscribe function that subscribes the user to the post
+    """
+    email = request.args.get('email')
+    new_subscriber = Subscriber(email=email)
+    db.session.add(new_subscriber)
+    db.session.commit()
+    flash('Email submitted successfully', 'success')
+    return redirect(url_for('main.index'))

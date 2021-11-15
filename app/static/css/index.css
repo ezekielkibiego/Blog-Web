@@ -1,7 +1,11 @@
 body{
 
-    background-color: whitesmoke;
-    color: #264653;
+    background-image: url('https://64.media.tumblr.com/352745a46ac7fea8ce5a2cc6532377c9/tumblr_pk0lq1CPye1tbadl0_500.gifv');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    font-style: calc();
 
 }
 
@@ -34,8 +38,9 @@ body{
     color: white;
 }
 .quote{
+    font-family: 'Shalimar', cursive;
+    color: white;
     
-    color: #264653;
 }
 button{
     border: none;
@@ -45,4 +50,12 @@ button{
 .sign{
     text-decoration: none;
     outline: none;
+}
+.quotes .card-body{
+    border-top-left-radius: 50px;
+}
+.panel-default{
+    border-top-left-radius: 100px;
+    border-bottom-right-radius: 100PX;
+    background-color: #2a9d8f;
 }
