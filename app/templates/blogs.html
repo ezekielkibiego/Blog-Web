@@ -4,6 +4,8 @@
 {%block styles %}
 {{super()}}
 <link rel="stylesheet" href="{{url_for('static', filename= 'css/index.css')}}">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+  integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 {%endblock %}
 {% block content %}
 
@@ -15,94 +17,60 @@
     
 
     </div>
-    <div class="container">
-        {% for blog in blogs %}
-
-        <div class="col-md-3 ">
-            <div class="text-centre">
-                <div class="card text-white mb-3" style="max-width: 30rem; margin:1vw; padding:1vw;">
-                    <h4 class="card-header">{{blog.title}}</h4>
-                    <div class="card-body">
-
-                        <p class="card-title">Category: {{blog.category}}</p>
-
-                        <p class="card-text">Content: {{blog.content}}</p>
-                        <p class="card-text">Author: {{blog.created_by| capitalize}}</p>
-                        <p class="card-text">Date Posted: {{blog.date_posted.strftime('%Y-%m-%d')}}</p>
-            
-                        <a href="{{ url_for('main.delete_blog',id=blog.id)}}" class="text-danger" title="Delete Blog"><button>Delete Blog</button></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        {% endfor %}
-    </div>
-
 </body>
 
 <section class="footer">
-    <div class="container-fluid" style="background-color: #ffd97d">
+    <div class="container-fluid" style="background-color: #2a9d8f">
         <footer class="text-center text-white">
             <div class="container-fluid">
                 <section class="mt-5">
-                    <div class="row text-center d-flex justify-content-center pt-5">
-                        <div class="col-md-2">
-                            <h6 class="text-uppercase font-weight-bold">
-                                <a href="/" class="text-white">Home</a>
-                            </h6>
-                        </div>
-                        <div class="col-md-2">
-                            <h6 class="text-uppercase font-weight-bold">
-                                <a href="/quotes" class="text-white">Quotes</a>
-                            </h6>
-                        </div>
-                        <div class="col-md-2">
-                            <h6 class="text-uppercase font-weight-bold">
-                                <a href="/blog" class="text-white">Blogs</a>
-                            </h6>
-                        </div>
-                        <div class="col-md-2">
-                            <h6 class="text-uppercase font-weight-bold">
-                                <a href="{{url_for('main.profile',uname=current_user.username)}}"
-                                    class="text-white">{{current_user.username}}</a>
-                            </h6>
-                        </div>
-
-                        <div class="col-md-2">
-                            <h6 class="text-uppercase font-weight-bold">
-                                <a href="{{url_for('auth.logout')}}" class="text-white">Logout</a>
-                            </h6>
-                        </div>
-
-                        <div class="col-md-2">
-                            <h6 class="text-uppercase font-weight-bold">
-                                <a href="{{url_for('auth.login')}}" class="text-white">Login</a>
-                            </h6>
-                        </div>
-
+                  <div class="row text-center d-flex justify-content-center pt-5">
+                      <div class="col-md-3">
+                        <h6 class="text-uppercase font-weight-bold">
+                          <a href="mailto: kibiezekiel@gmail.com" target="_blank" class="text-white"><i class="fa fa-envelope fa-2x" aria-hidden="true"></i></a>
+                        </h6>
+                      </div>
+                      
+                      <div class="col-md-3">
+                        <h6 class="text-uppercase font-weight-bold">
+                          <a href="http://wa.me/+254722991833" target="_blank" class="text-white"><i class="fab fa-whatsapp fa-2x"></i></i>
+                          </a>
+                        </h6>
+                      </div>
+                     
+                      <div class="col-md-3">
+                        <h6 class="text-uppercase font-weight-bold">
+                          <a href="https://twitter.com/KibiegoEzekiel" target="_blank" class="text-white"><i class="fab fa-twitter fa-2x"></i></i></a>
+                        </h6>
+                      </div>
+                      
+                      <div class="col-md-3">
+                        <h6 class="text-uppercase font-weight-bold">
+                          <a href="https://www.facebook.com/kibiego.ezekiel.9" target="_blank" class="text-white"><i class="fab fa-facebook fa-2x"></i></a>
+                        </h6>
+                      </div>
+                      
                     </div>
-
                 </section>
                 <section class="mb-5">
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-8">
                             <p>
-
+  
                             </p>
                         </div>
                     </div>
                 </section>
-
+  
             </div>
-
-            <div class="" style="background-color: #ffd97d">
+  
+            <div class="" style="background-color: #2a9d8f">
                 © 2021 Copyright:
                 <a class="text-white" href="/">blogweb.com</a>
             </div> <br>
-
+  
         </footer>
-
+  
     </div>
-</section>
+  </section>
 {%endblock%}
