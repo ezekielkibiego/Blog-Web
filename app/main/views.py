@@ -131,9 +131,6 @@ def blog_details(id):
         flash('Your comment has been posted successfully!')
     return render_template('comments.html', blog=blogs, comment=comments, comment_form=form)
 
-
-
-# delete comment
 @main.route('/comment/<int:id>/delete', methods=['GET', 'POST'])
 @login_required
 def delete_comment(id):
@@ -160,3 +157,4 @@ def subscribe():
     db.session.commit()
     flash('Email submitted successfully', 'success')
     return redirect(url_for('main.index'))
+
