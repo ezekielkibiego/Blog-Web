@@ -23,10 +23,12 @@ def index():
 @main.route('/user/<uname>')
 def profile(uname):
     user = User.query.filter_by(username=uname).first()
+    blog_form = BlogForm()
+    all_blogs = Blog.query.order_by(Blog.date_posted).all()
     if user is None:
         abort(404)
-    return render_template("profile/profile.html", user=user)
 
+    return render_template("profile/profile.html", user=user, blogs = all_blogs)
 
 @main.route('/user/<uname>/update', methods=['GET', 'POST'])
 @login_required

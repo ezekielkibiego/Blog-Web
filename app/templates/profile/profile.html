@@ -40,6 +40,30 @@
  
 </div><br><br>
 
+<div class="container">
+    {% for blog in blogs %}
+
+    <div class="col-md-3 ">
+        <div class="text-centre">
+            <div class="card text-white mb-3" style="max-width: 30rem; margin:1vw; padding:1vw;">
+                <h4 class="card-header">{{blog.title}}</h4>
+                <div class="card-body">
+
+                    <p class="card-title">Category: {{blog.category}}</p>
+
+                    <p class="card-text">Content: {{blog.content}}</p>
+                    <p class="card-text">Author: {{blog.created_by| capitalize}}</p>
+                    <p class="card-text">Date Posted: {{blog.date_posted.strftime('%Y-%m-%d')}}</p>
+        
+                    <a href="{{ url_for('main.delete_blog',id=blog.id)}}" class="text-danger" title="Delete Blog"><button>Delete Blog</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    {% endfor %}
+</div>
+
 </div>
 
 <section class="footer">
