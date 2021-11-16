@@ -11,6 +11,7 @@ This  is a Python Flask App where a user(s) can post a blog(s) as well as read i
 
 ## Live Link
 
+https://blogwebkibiego.herokuapp.com/
 
 ## Screenshots
 
