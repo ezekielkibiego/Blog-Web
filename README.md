@@ -7,7 +7,7 @@
 [Ezekiel Kibiego](https://github.com/ezekielkibiego)
 
 # Description
-This  is a Python Flask App where a user(s) can post a blog(s) as well as read incredible random quotes. The user(s) can comment and also delete bogs and comments they have written and also allow(s) other users who have signed up to to sign in and comment and delete a blog.
+This  is a Python Flask App where a user(s) can post a blog(s) as well as read incredible random quotes. The user(s) can comment and also delete bogs and comments they have written and also allow(s) other users who have signed up to sign in and comment and delete a blog.
 
 ## Live Link
 
