@@ -7,17 +7,19 @@
 [Ezekiel Kibiego](https://github.com/ezekielkibiego)
 
 # Description
-This  is a Python Flask App where a user(s) can post a blog(s) as well as read incredible random quotes. The user(s) can comment and also delete bogs and comments they have written and also allow(s) other users who have signed up to to sign in and comment, upvote or downvote a blog.
+This  is a Python Flask App where a user(s) can post a blog(s) as well as read incredible random quotes. The user(s) can comment and also delete bogs and comments they have written and also allow(s) other users who have signed up to to sign in and comment and delete a blog.
 
 ## Live Link
 
 
 ## Screenshots
 
-<img src="">
-<img src="">
-<img src="">
-<img src="">
+<img src="app/static/images/Screenshot (1).png">
+<img src="app/static/images/Screenshot (2).png">
+<img src="app/static/images/Screenshot (3).png">
+<img src="app/static/images/Screenshot (4).png">
+<img src="app/static/images/Screenshot (5).png">
+<img src="app/static/images/Screenshot (6).png">
 
 
 
@@ -40,9 +42,9 @@ This  is a Python Flask App where a user(s) can post a blog(s) as well as read i
 | :---------------- | :---------------: | ------------------: |
 | Load the page | **On page load** | Get all blog posts, Select between signup and login on the right side|
 | Select SignUp| **Email**,**Username**,**Password** | Redirect to login|
-| Select Login | **Username** and **password** | Redirect to page with app pitches based on categories and commenting section|
+| Select Login | **Username** and **password** | Redirect to page with app Blog-Web based on categories and commenting section|
 | Select comment button | **Comment** | Form that you input your comment|
-| Click on submit |  | Redirect to all comments tamplate with your comment and other comments|
+| Click on submit |  | Redirect to all comments template with your comment and other comments|
 
 
 
